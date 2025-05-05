@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+
+backend.txt
 .env
 
 # Editor directories and files
