@@ -1,9 +1,11 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import { SMALL_IMG_BASE_URL } from "../utils/constants";
+import React, { useEffect, useState } from "react";
 import { Trash } from "lucide-react";
 import toast from "react-hot-toast";
+
+import { SMALL_IMG_BASE_URL } from "../utils/constants.js";
+
+import Navbar from "../components/Navbar.jsx";
 
 function formatDate(dateString) {
 	// Create a Date object from the input date string
@@ -20,7 +22,7 @@ function formatDate(dateString) {
 	return `${month} ${day}, ${year}`;
 }
 
-const SearchHistoryPage = () => {
+export default function SearchHistoryPage() {
 	const [searchHistory, setSearchHistory] = useState([]);
 
 	useEffect(() => {
@@ -99,4 +101,3 @@ const SearchHistoryPage = () => {
 		</div>
 	);
 };
-export default SearchHistoryPage;

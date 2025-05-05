@@ -1,60 +1,75 @@
-@import "tailwindcss";
+@import "tailwindcss";    /* Importing Tailwind CSS for utility-first styling */
 
+
+/* Custom class for the hero section background */
 .hero-bg {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("/hero.png");
+  /* Applying a linear gradient overlay with dark opacity, combined with a background image */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("/hero.png");
 }
 
+
+/* Custom animation class for shimmer effect (like a loading skeleton) */
 .shimmer {
-	animation: shimmer 2s infinite linear;
-	background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
-	background-size: 1000px 100%;
+  /* Shimmer effect applied continuously with a 2-second infinite linear animation */
+  animation: shimmer 2s infinite linear;
+  /* Defining a background gradient that will animate */
+  background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
+  background-size: 1000px 100%;  /* Adjusting size to make the gradient flow horizontally */
 }
 
+/* Keyframe animation for the shimmer effect */
 @keyframes shimmer {
-	0% {
-		background-position: -1000px 0;
-	}
-	100% {
-		background-position: 1000px 0;
-	}
+  0% {
+    background-position: -1000px 0;  /* Starts the gradient offscreen to the left */
+  }
+  100% {
+    background-position: 1000px 0;  /* Moves the gradient to the right offscreen */
+  }
 }
 
+
+/* Custom styling for the error page content's background (a radial gradient effect) */
 .error-page--content::before {
-	background: radial-gradient(
-		ellipse at center,
-		rgba(0, 0, 0, 0.5) 0,
-		rgba(0, 0, 0, 0.2) 45%,
-		rgba(0, 0, 0, 0.1) 55%,
-		transparent 70%
-	);
-	bottom: -10vw;
-	content: "";
-	left: 10vw;
-	position: absolute;
-	right: 10vw;
-	top: -10vw;
-	z-index: -1;
+  background: radial-gradient(
+    ellipse at center,      /* Defining a radial gradient centered at the middle */
+    rgba(0, 0, 0, 0.5) 0,  /* Darker center */
+    rgba(0, 0, 0, 0.2) 45%, /* Lighter at 45% from the center */
+    rgba(0, 0, 0, 0.1) 55%, /* Even lighter at 55% */
+    transparent 70%         /* Transparent at 70% */
+  );
+  /* Positioning the content absolutely within the element with large margins */
+  bottom: -10vw;
+  content: "";
+  left: 10vw;
+  position: absolute;
+  right: 10vw;
+  top: -10vw;
+  z-index: -1;  /* Placing this behind the content */
 }
 
+
+/* Custom scrollbar styling */
 ::-webkit-scrollbar {
-	width: 8px;
+  width: 8px;  /* Setting the scrollbar width */
 }
 
+/* Styling the scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-	background-color: #4b5563;
-	border-radius: 6px;
+  background-color: #4b5563;  /* Dark gray color for the thumb */
+  border-radius: 6px;  /* Rounded corners for the thumb */
 }
 
+/* Styling the scrollbar track (the part the thumb slides within) */
 ::-webkit-scrollbar-track {
-	background-color: #1a202c;
+  background-color: #1a202c;  /* Dark background for the track */
 }
 
-
-/* Hide scrollbar across all browsers */
+/* Custom class to hide the scrollbar completely across all browsers */
 .no-scrollbar::-webkit-scrollbar {
-	display: none;
+  display: none;  /* Hides the scrollbar for WebKit browsers */
 }
+
 .no-scrollbar {
-	-ms-overflow-style: none;  /* IE and Edge */
-	scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  /* Hides the scrollbar for IE and Edge */
+  scrollbar-width: none;     /* Hides the scrollbar for Firefox */
 }
